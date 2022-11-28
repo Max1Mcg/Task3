@@ -1,0 +1,22 @@
+﻿@page
+
+@model RazorPagesDB.Pages.IndexModel
+
+<h2>Список фильмов</h2>
+<p><a href="/CreateFilm">Добавить фильма</a></p>
+<table>
+    <tr><th>Навзание</th><th>Id_категории</th><th>Id</th></tr>
+    @foreach (var f in Model.Films)
+    {
+        <tr><td>@f.Name</td><td>@f.IdCategories</td><td>@f.Id</td></tr>
+    }
+</table>
+<h2>Список категорий</h2>
+<p><a href="/CreateCategory">Добавить категорию</a></p>
+<table>
+    <tr><th>Навзание</th><th>Id</th></tr>
+    @foreach (var c in Model.Categories)
+    {
+            <tr><td>@c.Name</td><td>@c.Id</td></tr>
+    }
+</table>
